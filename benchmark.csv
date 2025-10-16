@@ -1,0 +1,8 @@
+Module;Time;RSS
+ctypes_mosq;4.44;7900
+ctypes_mosq_async;8.54;14672
+paho;8.74;13004
+gmqtt;3.54;12136
+mqttools;11.39;15716
+aiomqtt;147.40;302936
+amqtt;90.32;469020
