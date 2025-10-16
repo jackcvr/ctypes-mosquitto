@@ -1,0 +1,39 @@
+services:
+  broker:
+    image: eclipse-mosquitto:latest
+    init: true
+
+  pub:
+    image: emqx/emqtt-bench:latest
+    network_mode: service:broker
+    init: true
+    depends_on:
+      - broker
+    command: pub -c 8 -I ${INTERVAL:-1000} -t benchmark -s 0
+
+  py: &PY
+    build: .
+    network_mode: service:broker
+    volumes:
+      - .:/app
+      - ~/.pypirc:/root/.pypirc:ro
+    environment:
+      MQTT_URL: ${MQTT_URL:-localhost:1883}
+      MQTT_USERNAME: ${MQTT_USERNAME:-}
+      MQTT_PASSWORD: ${MQTT_PASSWORD:-}
+      MQTT_QOS: ${MQTT_QOS:-0}
+    depends_on:
+      - broker
+
+  app:
+    <<: *PY
+    init: true
+    environment:
+      MODULE: ${MODULE:-ctypes_mosq}
+      AMOUNT: ${AMOUNT:-}
+      INTERVAL: ${INTERVAL:-1000}
+    depends_on:
+      - broker
+      - pub
+#    command: sh -c "sleep 1 && exec /usr/bin/time -f '%e;%M' python3 -m benchmarks._$${MODULE}"
+    command: sh -c "sleep 1 && exec py-spy record -o ./profile.svg -- python3 -m benchmarks._$${MODULE}"
