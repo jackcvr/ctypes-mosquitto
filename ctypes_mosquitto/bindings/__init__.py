@@ -138,27 +138,14 @@ bind_all(lib, CType)
 bind(CType.mosquitto_p, lib.mosquitto_new, C.c_char_p, C.c_bool, C.py_object)
 bind(C.py_object, lib.mosquitto_userdata, CType.mosquitto_p)
 
-""" void mosquitto_connect_with_flags_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int)); """
+# void mosquitto_connect_with_flags_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int));
 bind(
     None,
     lib.mosquitto_connect_with_flags_callback_set,
     CType.mosquitto_p,
     Function.ON_CONNECT_WITH_FLAGS,
 )
-""" int mosquitto_subscribe_callback(
-		int (*callback)(struct mosquitto *, void *, const struct mosquitto_message *),
-		void *userdata,
-		const char *topic,
-		int qos,
-		const char *host,
-		int port,
-		const char *client_id,
-		int keepalive,
-		bool clean_session,
-		const char *username,
-		const char *password,
-		const struct libmosquitto_will *will,
-		const struct libmosquitto_tls *tls); """
+# int mosquitto_subscribe_callback( int (*callback)(struct mosquitto *, void *, const struct mosquitto_message *), void *userdata, const char *topic, int qos, const char *host, int port, const char *client_id, int keepalive, bool clean_session, const char *username, const char *password, const struct libmosquitto_will *will, const struct libmosquitto_tls *tls);
 bind(
     C.c_int,
     lib.mosquitto_subscribe_callback,
@@ -177,10 +164,7 @@ bind(
     C.POINTER(Struct.Will),
     C.POINTER(Struct.TLS),
 )
-""" int mosquitto_tls_set(struct mosquitto *mosq,
-		const char *cafile, const char *capath,
-		const char *certfile, const char *keyfile,
-		int (*pw_callback)(char *buf, int size, int rwflag, void *userdata)); """
+# int mosquitto_tls_set(struct mosquitto *mosq, const char *cafile, const char *capath, const char *certfile, const char *keyfile, int (*pw_callback)(char *buf, int size, int rwflag, void *userdata));
 bind(
     C.c_int,
     lib.mosquitto_tls_set,
@@ -190,78 +174,78 @@ bind(
     C.c_char_p,
     Function.PW_CALLBACK,
 )
-""" void mosquitto_message_v5_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *, const mosquitto_property *props)); """
+# void mosquitto_message_v5_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_message_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_MESSAGE_V5,
 )
-""" void mosquitto_unsubscribe_v5_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int, const mosquitto_property *props)); """
+# void mosquitto_unsubscribe_v5_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_unsubscribe_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_UNSUBSCRIBE_V5,
 )
-""" void mosquitto_publish_v5_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int, int, const mosquitto_property *props)); """
+# void mosquitto_publish_v5_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int, int, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_publish_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_PUBLISH_V5,
 )
-""" void mosquitto_subscribe_v5_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *, const mosquitto_property *props)); """
+# void mosquitto_subscribe_v5_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_subscribe_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_SUBSCRIBE_V5,
 )
-""" void mosquitto_connect_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int)); """
+# void mosquitto_connect_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int));
 bind(None, lib.mosquitto_connect_callback_set, CType.mosquitto_p, Function.ON_CONNECT)
-""" void mosquitto_unsubscribe_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int)); """
+# void mosquitto_unsubscribe_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int));
 bind(
     None,
     lib.mosquitto_unsubscribe_callback_set,
     CType.mosquitto_p,
     Function.ON_UNSUBSCRIBE,
 )
-""" void mosquitto_subscribe_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *)); """
+# void mosquitto_subscribe_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *));
 bind(
     None, lib.mosquitto_subscribe_callback_set, CType.mosquitto_p, Function.ON_SUBSCRIBE
 )
-""" void mosquitto_log_callback_set(struct mosquitto *mosq, void (*on_log)(struct mosquitto *, void *, int, const char *)); """
+# void mosquitto_log_callback_set(struct mosquitto *mosq, void (*on_log)(struct mosquitto *, void *, int, const char *)); """
 bind(
     None,
     lib.mosquitto_log_callback_set,
     CType.mosquitto_p,
     Function.ON_UNSUBSCRIBE_V5,
 )
-""" void mosquitto_message_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *)); """
+# void mosquitto_message_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *));
 bind(None, lib.mosquitto_message_callback_set, CType.mosquitto_p, Function.ON_MESSAGE)
-""" void mosquitto_disconnect_v5_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int, const mosquitto_property *props)); """
+# void mosquitto_disconnect_v5_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_disconnect_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_DISCONNECT_V5,
 )
-""" void mosquitto_connect_v5_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int, const mosquitto_property *props)); """
+# void mosquitto_connect_v5_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int, const mosquitto_property *props));
 bind(
     None,
     lib.mosquitto_connect_v5_callback_set,
     CType.mosquitto_p,
     Function.ON_CONNECT_V5,
 )
-""" void mosquitto_disconnect_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int)); """
+# void mosquitto_disconnect_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int));
 bind(
     None,
     lib.mosquitto_disconnect_callback_set,
     CType.mosquitto_p,
     Function.ON_DISCONNECT,
 )
-""" void mosquitto_publish_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int)); """
+# void mosquitto_publish_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int));
 bind(
     None,
     lib.mosquitto_publish_callback_set,

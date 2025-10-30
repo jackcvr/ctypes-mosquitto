@@ -1,8 +1,6 @@
-# script is auto-generated at 2025-10-26T01:36:39.101430
-#
-# use next template to finish binding:
+# script is auto-generated
 
-"""
+"""Usage example:
 import ctypes as C
 
 from . import bind, bind_all
@@ -29,56 +27,40 @@ class CType:
     void_pp = C.c_void_p
 
 
-bind_all(lib)
+bind_all(lib, CType)
 
-''' void mosquitto_connect_with_flags_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int)); '''
-bind(None, lib.mosquitto_connect_with_flags_callback_set, ...)
-''' int mosquitto_subscribe_callback(
-                int (*callback)(struct mosquitto *, void *, const struct mosquitto_message *),
-                void *userdata,
-                const char *topic,
-                int qos,
-                const char *host,
-                int port,
-                const char *client_id,
-                int keepalive,
-                bool clean_session,
-                const char *username,
-                const char *password,
-                const struct libmosquitto_will *will,
-                const struct libmosquitto_tls *tls); '''
-bind(C.c_int, lib.mosquitto_subscribe_callback, ...)
-''' int mosquitto_tls_set(struct mosquitto *mosq,
-                const char *cafile, const char *capath,
-                const char *certfile, const char *keyfile,
-                int (*pw_callback)(char *buf, int size, int rwflag, void *userdata)); '''
-bind(C.c_int, lib.mosquitto_tls_set, ...)
-''' void mosquitto_message_v5_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *, const mosquitto_property *props)); '''
-bind(None, lib.mosquitto_message_v5_callback_set, ...)
-''' void mosquitto_unsubscribe_v5_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int, const mosquitto_property *props)); '''
-bind(None, lib.mosquitto_unsubscribe_v5_callback_set, ...)
-''' void mosquitto_publish_v5_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int, int, const mosquitto_property *props)); '''
-bind(None, lib.mosquitto_publish_v5_callback_set, ...)
-''' void mosquitto_subscribe_v5_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *, const mosquitto_property *props)); '''
-bind(None, lib.mosquitto_subscribe_v5_callback_set, ...)
-''' void mosquitto_connect_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int)); '''
-bind(None, lib.mosquitto_connect_callback_set, ...)
-''' void mosquitto_unsubscribe_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int)); '''
-bind(None, lib.mosquitto_unsubscribe_callback_set, ...)
-''' void mosquitto_subscribe_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *)); '''
-bind(None, lib.mosquitto_subscribe_callback_set, ...)
-''' void mosquitto_log_callback_set(struct mosquitto *mosq, void (*on_log)(struct mosquitto *, void *, int, const char *)); '''
-bind(None, lib.mosquitto_log_callback_set, ...)
-''' void mosquitto_message_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *)); '''
+# void mosquitto_message_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *));
 bind(None, lib.mosquitto_message_callback_set, ...)
-''' void mosquitto_disconnect_v5_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int, const mosquitto_property *props)); '''
-bind(None, lib.mosquitto_disconnect_v5_callback_set, ...)
-''' void mosquitto_connect_v5_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int, const mosquitto_property *props)); '''
+# void mosquitto_connect_with_flags_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int));
+bind(None, lib.mosquitto_connect_with_flags_callback_set, ...)
+# int mosquitto_tls_set(struct mosquitto *mosq, const char *cafile, const char *capath, const char *certfile, const char *keyfile, int (*pw_callback)(char *buf, int size, int rwflag, void *userdata));
+bind(C.c_int, lib.mosquitto_tls_set, ...)
+# void mosquitto_publish_v5_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int, int, const mosquitto_property *props));
+bind(None, lib.mosquitto_publish_v5_callback_set, ...)
+# void mosquitto_subscribe_v5_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *, const mosquitto_property *props));
+bind(None, lib.mosquitto_subscribe_v5_callback_set, ...)
+# void mosquitto_unsubscribe_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int));
+bind(None, lib.mosquitto_unsubscribe_callback_set, ...)
+# void mosquitto_connect_v5_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int, int, const mosquitto_property *props));
 bind(None, lib.mosquitto_connect_v5_callback_set, ...)
-''' void mosquitto_disconnect_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int)); '''
-bind(None, lib.mosquitto_disconnect_callback_set, ...)
-''' void mosquitto_publish_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int)); '''
+# void mosquitto_publish_callback_set(struct mosquitto *mosq, void (*on_publish)(struct mosquitto *, void *, int));
 bind(None, lib.mosquitto_publish_callback_set, ...)
+# void mosquitto_disconnect_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int));
+bind(None, lib.mosquitto_disconnect_callback_set, ...)
+# void mosquitto_message_v5_callback_set(struct mosquitto *mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *, const mosquitto_property *props));
+bind(None, lib.mosquitto_message_v5_callback_set, ...)
+# void mosquitto_subscribe_callback_set(struct mosquitto *mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *));
+bind(None, lib.mosquitto_subscribe_callback_set, ...)
+# int mosquitto_subscribe_callback( int (*callback)(struct mosquitto *, void *, const struct mosquitto_message *), void *userdata, const char *topic, int qos, const char *host, int port, const char *client_id, int keepalive, bool clean_session, const char *username, const char *password, const struct libmosquitto_will *will, const struct libmosquitto_tls *tls);
+bind(C.c_int, lib.mosquitto_subscribe_callback, ...)
+# void mosquitto_unsubscribe_v5_callback_set(struct mosquitto *mosq, void (*on_unsubscribe)(struct mosquitto *, void *, int, const mosquitto_property *props));
+bind(None, lib.mosquitto_unsubscribe_v5_callback_set, ...)
+# void mosquitto_disconnect_v5_callback_set(struct mosquitto *mosq, void (*on_disconnect)(struct mosquitto *, void *, int, const mosquitto_property *props));
+bind(None, lib.mosquitto_disconnect_v5_callback_set, ...)
+# void mosquitto_log_callback_set(struct mosquitto *mosq, void (*on_log)(struct mosquitto *, void *, int, const char *));
+bind(None, lib.mosquitto_log_callback_set, ...)
+# void mosquitto_connect_callback_set(struct mosquitto *mosq, void (*on_connect)(struct mosquitto *, void *, int));
+bind(None, lib.mosquitto_connect_callback_set, ...)
 
 """
 
@@ -91,17 +73,17 @@ def bind(restype, func, *argtypes):
 
 
 def bind_all(lib, ctx):
-    """int mosquitto_lib_version(int *major, int *minor, int *revision);"""
+    # int mosquitto_lib_version(int *major, int *minor, int *revision);
     bind(C.c_int, lib.mosquitto_lib_version, ctx.int_p, ctx.int_p, ctx.int_p)
-    """ int mosquitto_lib_init(void); """
+    # int mosquitto_lib_init(void);
     bind(C.c_int, lib.mosquitto_lib_init)
-    """ int mosquitto_lib_cleanup(void); """
+    # int mosquitto_lib_cleanup(void);
     bind(C.c_int, lib.mosquitto_lib_cleanup)
-    """ struct mosquitto *mosquitto_new(const char *id, bool clean_session, void *obj); """
+    # struct mosquitto *mosquitto_new(const char *id, bool clean_session, void *obj);
     bind(ctx.mosquitto_p, lib.mosquitto_new, C.c_char_p, C.c_bool, C.c_void_p)
-    """ void mosquitto_destroy(struct mosquitto *mosq); """
+    # void mosquitto_destroy(struct mosquitto *mosq);
     bind(None, lib.mosquitto_destroy, ctx.mosquitto_p)
-    """ int mosquitto_reinitialise(struct mosquitto *mosq, const char *id, bool clean_session, void *obj); """
+    # int mosquitto_reinitialise(struct mosquitto *mosq, const char *id, bool clean_session, void *obj);
     bind(
         C.c_int,
         lib.mosquitto_reinitialise,
@@ -110,7 +92,7 @@ def bind_all(lib, ctx):
         C.c_bool,
         C.c_void_p,
     )
-    """ int mosquitto_will_set(struct mosquitto *mosq, const char *topic, int payloadlen, const void *payload, int qos, bool retain); """
+    # int mosquitto_will_set(struct mosquitto *mosq, const char *topic, int payloadlen, const void *payload, int qos, bool retain);
     bind(
         C.c_int,
         lib.mosquitto_will_set,
@@ -121,7 +103,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_bool,
     )
-    """ int mosquitto_will_set_v5(struct mosquitto *mosq, const char *topic, int payloadlen, const void *payload, int qos, bool retain, mosquitto_property *properties); """
+    # int mosquitto_will_set_v5(struct mosquitto *mosq, const char *topic, int payloadlen, const void *payload, int qos, bool retain, mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_will_set_v5,
@@ -133,15 +115,15 @@ def bind_all(lib, ctx):
         C.c_bool,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_will_clear(struct mosquitto *mosq); """
+    # int mosquitto_will_clear(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_will_clear, ctx.mosquitto_p)
-    """ int mosquitto_username_pw_set(struct mosquitto *mosq, const char *username, const char *password); """
+    # int mosquitto_username_pw_set(struct mosquitto *mosq, const char *username, const char *password);
     bind(
         C.c_int, lib.mosquitto_username_pw_set, ctx.mosquitto_p, C.c_char_p, C.c_char_p
     )
-    """ int mosquitto_connect(struct mosquitto *mosq, const char *host, int port, int keepalive); """
+    # int mosquitto_connect(struct mosquitto *mosq, const char *host, int port, int keepalive);
     bind(C.c_int, lib.mosquitto_connect, ctx.mosquitto_p, C.c_char_p, C.c_int, C.c_int)
-    """ int mosquitto_connect_bind(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address); """
+    # int mosquitto_connect_bind(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address);
     bind(
         C.c_int,
         lib.mosquitto_connect_bind,
@@ -151,7 +133,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_char_p,
     )
-    """ int mosquitto_connect_bind_v5(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address, const mosquitto_property *properties); """
+    # int mosquitto_connect_bind_v5(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_connect_bind_v5,
@@ -162,7 +144,7 @@ def bind_all(lib, ctx):
         C.c_char_p,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_connect_async(struct mosquitto *mosq, const char *host, int port, int keepalive); """
+    # int mosquitto_connect_async(struct mosquitto *mosq, const char *host, int port, int keepalive);
     bind(
         C.c_int,
         lib.mosquitto_connect_async,
@@ -171,7 +153,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_int,
     )
-    """ int mosquitto_connect_bind_async(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address); """
+    # int mosquitto_connect_bind_async(struct mosquitto *mosq, const char *host, int port, int keepalive, const char *bind_address);
     bind(
         C.c_int,
         lib.mosquitto_connect_bind_async,
@@ -181,7 +163,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_char_p,
     )
-    """ int mosquitto_connect_srv(struct mosquitto *mosq, const char *host, int keepalive, const char *bind_address); """
+    # int mosquitto_connect_srv(struct mosquitto *mosq, const char *host, int keepalive, const char *bind_address);
     bind(
         C.c_int,
         lib.mosquitto_connect_srv,
@@ -190,13 +172,13 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_char_p,
     )
-    """ int mosquitto_reconnect(struct mosquitto *mosq); """
+    # int mosquitto_reconnect(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_reconnect, ctx.mosquitto_p)
-    """ int mosquitto_reconnect_async(struct mosquitto *mosq); """
+    # int mosquitto_reconnect_async(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_reconnect_async, ctx.mosquitto_p)
-    """ int mosquitto_disconnect(struct mosquitto *mosq); """
+    # int mosquitto_disconnect(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_disconnect, ctx.mosquitto_p)
-    """ int mosquitto_disconnect_v5(struct mosquitto *mosq, int reason_code, const mosquitto_property *properties); """
+    # int mosquitto_disconnect_v5(struct mosquitto *mosq, int reason_code, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_disconnect_v5,
@@ -204,7 +186,7 @@ def bind_all(lib, ctx):
         C.c_int,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_publish(struct mosquitto *mosq, int *mid, const char *topic, int payloadlen, const void *payload, int qos, bool retain); """
+    # int mosquitto_publish(struct mosquitto *mosq, int *mid, const char *topic, int payloadlen, const void *payload, int qos, bool retain);
     bind(
         C.c_int,
         lib.mosquitto_publish,
@@ -216,15 +198,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_bool,
     )
-    """ int mosquitto_publish_v5(
-		struct mosquitto *mosq,
-		int *mid,
-		const char *topic,
-		int payloadlen,
-		const void *payload,
-		int qos,
-		bool retain,
-		const mosquitto_property *properties); """
+    # int mosquitto_publish_v5( struct mosquitto *mosq, int *mid, const char *topic, int payloadlen, const void *payload, int qos, bool retain, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_publish_v5,
@@ -237,7 +211,7 @@ def bind_all(lib, ctx):
         C.c_bool,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_subscribe(struct mosquitto *mosq, int *mid, const char *sub, int qos); """
+    # int mosquitto_subscribe(struct mosquitto *mosq, int *mid, const char *sub, int qos);
     bind(
         C.c_int,
         lib.mosquitto_subscribe,
@@ -246,7 +220,7 @@ def bind_all(lib, ctx):
         C.c_char_p,
         C.c_int,
     )
-    """ int mosquitto_subscribe_v5(struct mosquitto *mosq, int *mid, const char *sub, int qos, int options, const mosquitto_property *properties); """
+    # int mosquitto_subscribe_v5(struct mosquitto *mosq, int *mid, const char *sub, int qos, int options, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_subscribe_v5,
@@ -257,7 +231,7 @@ def bind_all(lib, ctx):
         C.c_int,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_subscribe_multiple(struct mosquitto *mosq, int *mid, int sub_count, char *const *const sub, int qos, int options, const mosquitto_property *properties); """
+    # int mosquitto_subscribe_multiple(struct mosquitto *mosq, int *mid, int sub_count, char *const *const sub, int qos, int options, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_subscribe_multiple,
@@ -269,9 +243,9 @@ def bind_all(lib, ctx):
         C.c_int,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_unsubscribe(struct mosquitto *mosq, int *mid, const char *sub); """
+    # int mosquitto_unsubscribe(struct mosquitto *mosq, int *mid, const char *sub);
     bind(C.c_int, lib.mosquitto_unsubscribe, ctx.mosquitto_p, ctx.int_p, C.c_char_p)
-    """ int mosquitto_unsubscribe_v5(struct mosquitto *mosq, int *mid, const char *sub, const mosquitto_property *properties); """
+    # int mosquitto_unsubscribe_v5(struct mosquitto *mosq, int *mid, const char *sub, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_unsubscribe_v5,
@@ -280,7 +254,7 @@ def bind_all(lib, ctx):
         C.c_char_p,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_unsubscribe_multiple(struct mosquitto *mosq, int *mid, int sub_count, char *const *const sub, const mosquitto_property *properties); """
+    # int mosquitto_unsubscribe_multiple(struct mosquitto *mosq, int *mid, int sub_count, char *const *const sub, const mosquitto_property *properties);
     bind(
         C.c_int,
         lib.mosquitto_unsubscribe_multiple,
@@ -290,42 +264,42 @@ def bind_all(lib, ctx):
         ctx.char_pp,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_message_copy(struct mosquitto_message *dst, const struct mosquitto_message *src); """
+    # int mosquitto_message_copy(struct mosquitto_message *dst, const struct mosquitto_message *src);
     bind(
         C.c_int,
         lib.mosquitto_message_copy,
         ctx.mosquitto_message_p,
         ctx.mosquitto_message_p,
     )
-    """ void mosquitto_message_free(struct mosquitto_message **message); """
+    # void mosquitto_message_free(struct mosquitto_message **message);
     bind(None, lib.mosquitto_message_free, ctx.mosquitto_message_pp)
-    """ void mosquitto_message_free_contents(struct mosquitto_message *message); """
+    # void mosquitto_message_free_contents(struct mosquitto_message *message);
     bind(None, lib.mosquitto_message_free_contents, ctx.mosquitto_message_p)
-    """ int mosquitto_loop_forever(struct mosquitto *mosq, int timeout, int max_packets); """
+    # int mosquitto_loop_forever(struct mosquitto *mosq, int timeout, int max_packets);
     bind(C.c_int, lib.mosquitto_loop_forever, ctx.mosquitto_p, C.c_int, C.c_int)
-    """ int mosquitto_loop_start(struct mosquitto *mosq); """
+    # int mosquitto_loop_start(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_loop_start, ctx.mosquitto_p)
-    """ int mosquitto_loop_stop(struct mosquitto *mosq, bool force); """
+    # int mosquitto_loop_stop(struct mosquitto *mosq, bool force);
     bind(C.c_int, lib.mosquitto_loop_stop, ctx.mosquitto_p, C.c_bool)
-    """ int mosquitto_loop(struct mosquitto *mosq, int timeout, int max_packets); """
+    # int mosquitto_loop(struct mosquitto *mosq, int timeout, int max_packets);
     bind(C.c_int, lib.mosquitto_loop, ctx.mosquitto_p, C.c_int, C.c_int)
-    """ int mosquitto_loop_read(struct mosquitto *mosq, int max_packets); """
+    # int mosquitto_loop_read(struct mosquitto *mosq, int max_packets);
     bind(C.c_int, lib.mosquitto_loop_read, ctx.mosquitto_p, C.c_int)
-    """ int mosquitto_loop_write(struct mosquitto *mosq, int max_packets); """
+    # int mosquitto_loop_write(struct mosquitto *mosq, int max_packets);
     bind(C.c_int, lib.mosquitto_loop_write, ctx.mosquitto_p, C.c_int)
-    """ int mosquitto_loop_misc(struct mosquitto *mosq); """
+    # int mosquitto_loop_misc(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_loop_misc, ctx.mosquitto_p)
-    """ int mosquitto_socket(struct mosquitto *mosq); """
+    # int mosquitto_socket(struct mosquitto *mosq);
     bind(C.c_int, lib.mosquitto_socket, ctx.mosquitto_p)
-    """ bool mosquitto_want_write(struct mosquitto *mosq); """
+    # bool mosquitto_want_write(struct mosquitto *mosq);
     bind(C.c_bool, lib.mosquitto_want_write, ctx.mosquitto_p)
-    """ int mosquitto_threaded_set(struct mosquitto *mosq, bool threaded); """
+    # int mosquitto_threaded_set(struct mosquitto *mosq, bool threaded);
     bind(C.c_int, lib.mosquitto_threaded_set, ctx.mosquitto_p, C.c_bool)
-    """ int mosquitto_opts_set(struct mosquitto *mosq, enum mosq_opt_t option, void *value); """
+    # int mosquitto_opts_set(struct mosquitto *mosq, enum mosq_opt_t option, void *value);
     bind(C.c_int, lib.mosquitto_opts_set, ctx.mosquitto_p, ctx.mosq_opt_t, C.c_void_p)
-    """ int mosquitto_int_option(struct mosquitto *mosq, enum mosq_opt_t option, int value); """
+    # int mosquitto_int_option(struct mosquitto *mosq, enum mosq_opt_t option, int value);
     bind(C.c_int, lib.mosquitto_int_option, ctx.mosquitto_p, ctx.mosq_opt_t, C.c_int)
-    """ int mosquitto_string_option(struct mosquitto *mosq, enum mosq_opt_t option, const char *value); """
+    # int mosquitto_string_option(struct mosquitto *mosq, enum mosq_opt_t option, const char *value);
     bind(
         C.c_int,
         lib.mosquitto_string_option,
@@ -333,11 +307,11 @@ def bind_all(lib, ctx):
         ctx.mosq_opt_t,
         C.c_char_p,
     )
-    """ int mosquitto_void_option(struct mosquitto *mosq, enum mosq_opt_t option, void *value); """
+    # int mosquitto_void_option(struct mosquitto *mosq, enum mosq_opt_t option, void *value);
     bind(
         C.c_int, lib.mosquitto_void_option, ctx.mosquitto_p, ctx.mosq_opt_t, C.c_void_p
     )
-    """ int mosquitto_reconnect_delay_set(struct mosquitto *mosq, unsigned int reconnect_delay, unsigned int reconnect_delay_max, bool reconnect_exponential_backoff); """
+    # int mosquitto_reconnect_delay_set(struct mosquitto *mosq, unsigned int reconnect_delay, unsigned int reconnect_delay_max, bool reconnect_exponential_backoff);
     bind(
         C.c_int,
         lib.mosquitto_reconnect_delay_set,
@@ -346,17 +320,17 @@ def bind_all(lib, ctx):
         C.c_uint,
         C.c_bool,
     )
-    """ int mosquitto_max_inflight_messages_set(struct mosquitto *mosq, unsigned int max_inflight_messages); """
+    # int mosquitto_max_inflight_messages_set(struct mosquitto *mosq, unsigned int max_inflight_messages);
     bind(C.c_int, lib.mosquitto_max_inflight_messages_set, ctx.mosquitto_p, C.c_uint)
-    """ void mosquitto_message_retry_set(struct mosquitto *mosq, unsigned int message_retry); """
+    # void mosquitto_message_retry_set(struct mosquitto *mosq, unsigned int message_retry);
     bind(None, lib.mosquitto_message_retry_set, ctx.mosquitto_p, C.c_uint)
-    """ void mosquitto_user_data_set(struct mosquitto *mosq, void *obj); """
+    # void mosquitto_user_data_set(struct mosquitto *mosq, void *obj);
     bind(None, lib.mosquitto_user_data_set, ctx.mosquitto_p, C.c_void_p)
-    """ void *mosquitto_userdata(struct mosquitto *mosq); """
+    # void *mosquitto_userdata(struct mosquitto *mosq);
     bind(C.c_void_p, lib.mosquitto_userdata, ctx.mosquitto_p)
-    """ int mosquitto_tls_insecure_set(struct mosquitto *mosq, bool value); """
+    # int mosquitto_tls_insecure_set(struct mosquitto *mosq, bool value);
     bind(C.c_int, lib.mosquitto_tls_insecure_set, ctx.mosquitto_p, C.c_bool)
-    """ int mosquitto_tls_opts_set(struct mosquitto *mosq, int cert_reqs, const char *tls_version, const char *ciphers); """
+    # int mosquitto_tls_opts_set(struct mosquitto *mosq, int cert_reqs, const char *tls_version, const char *ciphers);
     bind(
         C.c_int,
         lib.mosquitto_tls_opts_set,
@@ -365,7 +339,7 @@ def bind_all(lib, ctx):
         C.c_char_p,
         C.c_char_p,
     )
-    """ int mosquitto_tls_psk_set(struct mosquitto *mosq, const char *psk, const char *identity, const char *ciphers); """
+    # int mosquitto_tls_psk_set(struct mosquitto *mosq, const char *psk, const char *identity, const char *ciphers);
     bind(
         C.c_int,
         lib.mosquitto_tls_psk_set,
@@ -374,9 +348,9 @@ def bind_all(lib, ctx):
         C.c_char_p,
         C.c_char_p,
     )
-    """ void *mosquitto_ssl_get(struct mosquitto *mosq); """
+    # void *mosquitto_ssl_get(struct mosquitto *mosq);
     bind(C.c_void_p, lib.mosquitto_ssl_get, ctx.mosquitto_p)
-    """ int mosquitto_socks5_set(struct mosquitto *mosq, const char *host, int port, const char *username, const char *password); """
+    # int mosquitto_socks5_set(struct mosquitto *mosq, const char *host, int port, const char *username, const char *password);
     bind(
         C.c_int,
         lib.mosquitto_socks5_set,
@@ -386,21 +360,21 @@ def bind_all(lib, ctx):
         C.c_char_p,
         C.c_char_p,
     )
-    """ const char *mosquitto_strerror(int mosq_errno); """
+    # const char *mosquitto_strerror(int mosq_errno);
     bind(C.c_char_p, lib.mosquitto_strerror, C.c_int)
-    """ const char *mosquitto_connack_string(int connack_code); """
+    # const char *mosquitto_connack_string(int connack_code);
     bind(C.c_char_p, lib.mosquitto_connack_string, C.c_int)
-    """ const char *mosquitto_reason_string(int reason_code); """
+    # const char *mosquitto_reason_string(int reason_code);
     bind(C.c_char_p, lib.mosquitto_reason_string, C.c_int)
-    """ int mosquitto_string_to_command(const char *str, int *cmd); """
+    # int mosquitto_string_to_command(const char *str, int *cmd);
     bind(C.c_int, lib.mosquitto_string_to_command, C.c_char_p, ctx.int_p)
-    """ int mosquitto_sub_topic_tokenise(const char *subtopic, char ***topics, int *count); """
+    # int mosquitto_sub_topic_tokenise(const char *subtopic, char ***topics, int *count);
     bind(C.c_int, lib.mosquitto_sub_topic_tokenise, C.c_char_p, ctx.char_ppp, ctx.int_p)
-    """ int mosquitto_sub_topic_tokens_free(char ***topics, int count); """
+    # int mosquitto_sub_topic_tokens_free(char ***topics, int count);
     bind(C.c_int, lib.mosquitto_sub_topic_tokens_free, ctx.char_ppp, C.c_int)
-    """ int mosquitto_topic_matches_sub(const char *sub, const char *topic, bool *result); """
+    # int mosquitto_topic_matches_sub(const char *sub, const char *topic, bool *result);
     bind(C.c_int, lib.mosquitto_topic_matches_sub, C.c_char_p, C.c_char_p, ctx.bool_p)
-    """ int mosquitto_topic_matches_sub2(const char *sub, size_t sublen, const char *topic, size_t topiclen, bool *result); """
+    # int mosquitto_topic_matches_sub2(const char *sub, size_t sublen, const char *topic, size_t topiclen, bool *result);
     bind(
         C.c_int,
         lib.mosquitto_topic_matches_sub2,
@@ -410,31 +384,17 @@ def bind_all(lib, ctx):
         C.c_size_t,
         ctx.bool_p,
     )
-    """ int mosquitto_pub_topic_check(const char *topic); """
+    # int mosquitto_pub_topic_check(const char *topic);
     bind(C.c_int, lib.mosquitto_pub_topic_check, C.c_char_p)
-    """ int mosquitto_pub_topic_check2(const char *topic, size_t topiclen); """
+    # int mosquitto_pub_topic_check2(const char *topic, size_t topiclen);
     bind(C.c_int, lib.mosquitto_pub_topic_check2, C.c_char_p, C.c_size_t)
-    """ int mosquitto_sub_topic_check(const char *topic); """
+    # int mosquitto_sub_topic_check(const char *topic);
     bind(C.c_int, lib.mosquitto_sub_topic_check, C.c_char_p)
-    """ int mosquitto_sub_topic_check2(const char *topic, size_t topiclen); """
+    # int mosquitto_sub_topic_check2(const char *topic, size_t topiclen);
     bind(C.c_int, lib.mosquitto_sub_topic_check2, C.c_char_p, C.c_size_t)
-    """ int mosquitto_validate_utf8(const char *str, int len); """
+    # int mosquitto_validate_utf8(const char *str, int len);
     bind(C.c_int, lib.mosquitto_validate_utf8, C.c_char_p, C.c_int)
-    """ int mosquitto_subscribe_simple(
-		struct mosquitto_message **messages,
-		int msg_count,
-		bool want_retained,
-		const char *topic,
-		int qos,
-		const char *host,
-		int port,
-		const char *client_id,
-		int keepalive,
-		bool clean_session,
-		const char *username,
-		const char *password,
-		const struct libmosquitto_will *will,
-		const struct libmosquitto_tls *tls); """
+    # int mosquitto_subscribe_simple( struct mosquitto_message **messages, int msg_count, bool want_retained, const char *topic, int qos, const char *host, int port, const char *client_id, int keepalive, bool clean_session, const char *username, const char *password, const struct libmosquitto_will *will, const struct libmosquitto_tls *tls);
     bind(
         C.c_int,
         lib.mosquitto_subscribe_simple,
@@ -453,7 +413,7 @@ def bind_all(lib, ctx):
         ctx.libmosquitto_will_p,
         ctx.libmosquitto_tls_p,
     )
-    """ int mosquitto_property_add_byte(mosquitto_property **proplist, int identifier, uint8_t value); """
+    # int mosquitto_property_add_byte(mosquitto_property **proplist, int identifier, uint8_t value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_byte,
@@ -461,7 +421,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_uint8,
     )
-    """ int mosquitto_property_add_int16(mosquitto_property **proplist, int identifier, uint16_t value); """
+    # int mosquitto_property_add_int16(mosquitto_property **proplist, int identifier, uint16_t value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_int16,
@@ -469,7 +429,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_uint16,
     )
-    """ int mosquitto_property_add_int32(mosquitto_property **proplist, int identifier, uint32_t value); """
+    # int mosquitto_property_add_int32(mosquitto_property **proplist, int identifier, uint32_t value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_int32,
@@ -477,7 +437,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_uint32,
     )
-    """ int mosquitto_property_add_varint(mosquitto_property **proplist, int identifier, uint32_t value); """
+    # int mosquitto_property_add_varint(mosquitto_property **proplist, int identifier, uint32_t value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_varint,
@@ -485,7 +445,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_uint32,
     )
-    """ int mosquitto_property_add_binary(mosquitto_property **proplist, int identifier, const void *value, uint16_t len); """
+    # int mosquitto_property_add_binary(mosquitto_property **proplist, int identifier, const void *value, uint16_t len);
     bind(
         C.c_int,
         lib.mosquitto_property_add_binary,
@@ -494,7 +454,7 @@ def bind_all(lib, ctx):
         C.c_void_p,
         C.c_uint16,
     )
-    """ int mosquitto_property_add_string(mosquitto_property **proplist, int identifier, const char *value); """
+    # int mosquitto_property_add_string(mosquitto_property **proplist, int identifier, const char *value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_string,
@@ -502,7 +462,7 @@ def bind_all(lib, ctx):
         C.c_int,
         C.c_char_p,
     )
-    """ int mosquitto_property_add_string_pair(mosquitto_property **proplist, int identifier, const char *name, const char *value); """
+    # int mosquitto_property_add_string_pair(mosquitto_property **proplist, int identifier, const char *name, const char *value);
     bind(
         C.c_int,
         lib.mosquitto_property_add_string_pair,
@@ -511,17 +471,13 @@ def bind_all(lib, ctx):
         C.c_char_p,
         C.c_char_p,
     )
-    """ int mosquitto_property_identifier(const mosquitto_property *property); """
+    # int mosquitto_property_identifier(const mosquitto_property *property);
     bind(C.c_int, lib.mosquitto_property_identifier, ctx.mosquitto_property_p)
-    """ const mosquitto_property *mosquitto_property_next(const mosquitto_property *proplist); """
+    # const mosquitto_property *mosquitto_property_next(const mosquitto_property *proplist);
     bind(
         ctx.mosquitto_property_p, lib.mosquitto_property_next, ctx.mosquitto_property_p
     )
-    """ const mosquitto_property *mosquitto_property_read_byte(
-		const mosquitto_property *proplist,
-		int identifier,
-		uint8_t *value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_byte( const mosquitto_property *proplist, int identifier, uint8_t *value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_byte,
@@ -530,11 +486,7 @@ def bind_all(lib, ctx):
         ctx.uint8_t_p,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_int16(
-		const mosquitto_property *proplist,
-		int identifier,
-		uint16_t *value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_int16( const mosquitto_property *proplist, int identifier, uint16_t *value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_int16,
@@ -543,11 +495,7 @@ def bind_all(lib, ctx):
         ctx.uint16_t_p,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_int32(
-		const mosquitto_property *proplist,
-		int identifier,
-		uint32_t *value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_int32( const mosquitto_property *proplist, int identifier, uint32_t *value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_int32,
@@ -556,11 +504,7 @@ def bind_all(lib, ctx):
         ctx.uint32_t_p,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_varint(
-		const mosquitto_property *proplist,
-		int identifier,
-		uint32_t *value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_varint( const mosquitto_property *proplist, int identifier, uint32_t *value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_varint,
@@ -569,12 +513,7 @@ def bind_all(lib, ctx):
         ctx.uint32_t_p,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_binary(
-		const mosquitto_property *proplist,
-		int identifier,
-		void **value,
-		uint16_t *len,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_binary( const mosquitto_property *proplist, int identifier, void **value, uint16_t *len, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_binary,
@@ -584,11 +523,7 @@ def bind_all(lib, ctx):
         ctx.uint16_t_p,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_string(
-		const mosquitto_property *proplist,
-		int identifier,
-		char **value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_string( const mosquitto_property *proplist, int identifier, char **value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_string,
@@ -597,12 +532,7 @@ def bind_all(lib, ctx):
         ctx.char_pp,
         C.c_bool,
     )
-    """ const mosquitto_property *mosquitto_property_read_string_pair(
-		const mosquitto_property *proplist,
-		int identifier,
-		char **name,
-		char **value,
-		bool skip_first); """
+    # const mosquitto_property *mosquitto_property_read_string_pair( const mosquitto_property *proplist, int identifier, char **name, char **value, bool skip_first);
     bind(
         ctx.mosquitto_property_p,
         lib.mosquitto_property_read_string_pair,
@@ -612,22 +542,22 @@ def bind_all(lib, ctx):
         ctx.char_pp,
         C.c_bool,
     )
-    """ void mosquitto_property_free_all(mosquitto_property **properties); """
+    # void mosquitto_property_free_all(mosquitto_property **properties);
     bind(None, lib.mosquitto_property_free_all, ctx.mosquitto_property_pp)
-    """ int mosquitto_property_copy_all(mosquitto_property **dest, const mosquitto_property *src); """
+    # int mosquitto_property_copy_all(mosquitto_property **dest, const mosquitto_property *src);
     bind(
         C.c_int,
         lib.mosquitto_property_copy_all,
         ctx.mosquitto_property_pp,
         ctx.mosquitto_property_p,
     )
-    """ int mosquitto_property_check_command(int command, int identifier); """
+    # int mosquitto_property_check_command(int command, int identifier);
     bind(C.c_int, lib.mosquitto_property_check_command, C.c_int, C.c_int)
-    """ int mosquitto_property_check_all(int command, const mosquitto_property *properties); """
+    # int mosquitto_property_check_all(int command, const mosquitto_property *properties);
     bind(C.c_int, lib.mosquitto_property_check_all, C.c_int, ctx.mosquitto_property_p)
-    """ const char *mosquitto_property_identifier_to_string(int identifier); """
+    # const char *mosquitto_property_identifier_to_string(int identifier);
     bind(C.c_char_p, lib.mosquitto_property_identifier_to_string, C.c_int)
-    """ int mosquitto_string_to_property_info(const char *propname, int *identifier, int *type); """
+    # int mosquitto_string_to_property_info(const char *propname, int *identifier, int *type);
     bind(
         C.c_int, lib.mosquitto_string_to_property_info, C.c_char_p, ctx.int_p, ctx.int_p
     )
